@@ -1,0 +1,39 @@
+{
+  "name": "academic-paper-team",
+  "version": "0.2.0",
+  "description": "A traceable nine-role workflow for planning, researching, drafting, formatting, revising, and reviewing academic papers.",
+  "author": {
+    "name": "lfyin-ux",
+    "url": "https://github.com/lfyin-ux"
+  },
+  "homepage": "https://github.com/lfyin-ux/lunwenSkill",
+  "repository": "https://github.com/lfyin-ux/lunwenSkill",
+  "keywords": [
+    "academic-writing",
+    "paper",
+    "multi-agent",
+    "revision",
+    "formatting"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "论文多智能体团队",
+    "shortDescription": "九角色协作完成论文规划、写作、修改、排版与复检",
+    "longDescription": "通过九个可独立升级的专业角色，完成论文目录规划、资料检索、内容写作、图表制作、格式处理、批注修改以及修改后的全局回归检查，并保存可追溯的证据和修改记录。",
+    "developerName": "lfyin-ux",
+    "category": "Productivity",
+    "capabilities": [
+      "Research",
+      "Write",
+      "Create",
+      "Review"
+    ],
+    "websiteURL": "https://github.com/lfyin-ux/lunwenSkill",
+    "defaultPrompt": [
+      "使用论文多智能体团队初始化一个论文项目。",
+      "读取我的论文要求，先生成目录和整体写作计划。",
+      "读取导师批注，分派修改任务并在修改后进行全局复检。"
+    ],
+    "brandColor": "#4F46E5"
+  }
+}

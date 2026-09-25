@@ -1,45 +1,54 @@
-# Academic Paper Team Skill
+# Academic Paper Team Plugin
 
-一个可通过 Git 复用的 Codex 论文多智能体 Skill。它将论文工作拆分为九个可独立升级的角色，并通过稳定的文件契约完成规划、检索、写作、制图、排版、批注修改和回归检查。
+一个可通过 Git 复用并显示在 Codex“插件”页面的论文多智能体 Plugin。插件内置 `academic-paper-team` Skill，将论文工作拆分为九个可独立升级的角色，并通过稳定的文件契约完成规划、检索、写作、制图、排版、批注修改和回归检查。
 
-## 安装
+## 插件结构
+
+```text
+.codex-plugin/plugin.json
+skills/academic-paper-team/
+```
+
+Skill 的角色、协议、模板和脚本均位于 `skills/academic-paper-team/`。
+
+## 从 Git 安装源码
 
 macOS / Linux：
 
 ```bash
-git clone https://github.com/lfyin-ux/lunwenSkill.git ~/.codex/skills/academic-paper-team
+git clone https://github.com/lfyin-ux/lunwenSkill.git ~/plugins/academic-paper-team
 ```
 
 Windows PowerShell：
 
 ```powershell
-git clone https://github.com/lfyin-ux/lunwenSkill.git "$HOME\.codex\skills\academic-paper-team"
+git clone https://github.com/lfyin-ux/lunwenSkill.git "$HOME\plugins\academic-paper-team"
 ```
 
-重启 Codex 后，可直接提出论文任务，或显式使用 `$academic-paper-team`。
+插件还需登记到个人 marketplace 并执行 `codex plugin add academic-paper-team@personal`。当前电脑已由自动安装流程完成登记。安装或更新后，请在新任务中测试。
 
 ## 更新
 
 ```bash
-git -C ~/.codex/skills/academic-paper-team pull --ff-only
+git -C ~/plugins/academic-paper-team pull --ff-only
 ```
 
 Windows PowerShell：
 
 ```powershell
-git -C "$HOME\.codex\skills\academic-paper-team" pull --ff-only
+git -C "$HOME\plugins\academic-paper-team" pull --ff-only
 ```
 
 ## 初始化论文项目
 
 ```bash
-python3 ~/.codex/skills/academic-paper-team/scripts/init_paper_project.py /absolute/path/to/my-paper
+python3 ~/plugins/academic-paper-team/skills/academic-paper-team/scripts/init_paper_project.py /absolute/path/to/my-paper
 ```
 
 Windows PowerShell：
 
 ```powershell
-py "$HOME\.codex\skills\academic-paper-team\scripts\init_paper_project.py" "C:\path\to\my-paper"
+py "$HOME\plugins\academic-paper-team\skills\academic-paper-team\scripts\init_paper_project.py" "C:\path\to\my-paper"
 ```
 
 脚本只依赖 Python 3.9+ 标准库。
@@ -48,7 +57,7 @@ py "$HOME\.codex\skills\academic-paper-team\scripts\init_paper_project.py" "C:\p
 
 ## 单独优化角色
 
-九个角色分别位于 `references/roles/`。优化某个角色时，应保持其 `Role contract` 中的角色标识、输入、输出、升级条件以及 `references/shared-contract.md` 规定的公共字段兼容。修改后运行 `python3 scripts/validate_contract.py .`。若必须变更公共契约，应在同一次提交中迁移所有受影响角色并提升契约版本。
+九个角色分别位于 `skills/academic-paper-team/references/roles/`。优化某个角色时，应保持其 `Role contract` 中的角色标识、输入、输出、升级条件以及共享契约规定的公共字段兼容。修改后运行 `python3 skills/academic-paper-team/scripts/validate_contract.py skills/academic-paper-team`。若必须变更公共契约，应在同一次提交中迁移所有受影响角色并提升契约版本。
 
 ## 角色列表
 
