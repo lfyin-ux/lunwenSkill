@@ -1,0 +1,6 @@
+interface:
+  display_name: "论文多智能体团队"
+  short_description: "九角色协作完成论文规划、写作、修改、排版与质量复检"
+  default_prompt: "使用 $academic-paper-team 根据我的要求创建或修改论文，并保留可追溯的资料、修改与检查记录。"
+policy:
+  allow_implicit_invocation: true

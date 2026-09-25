@@ -1,0 +1,24 @@
+profile_version: 1
+source_of_truth: ""
+page:
+  size: ""
+  orientation: ""
+  margins: {top: "", bottom: "", left: "", right: ""}
+body:
+  font: ""
+  size: ""
+  line_spacing: ""
+  first_line_indent: ""
+headings: {}
+header_footer: {}
+figures: {}
+tables: {}
+equations: {}
+citations:
+  style: ""
+front_matter: {}
+appendices: {}
+output:
+  formats: [docx, pdf]
+  filename_pattern: ""
+unknown_requirements: []
